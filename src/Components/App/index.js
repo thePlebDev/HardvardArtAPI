@@ -1,10 +1,13 @@
 import React from 'react';
+import Home from '../Home'
 
 
 const App =()=>{
 
   return(
-    <div>This is the app component</div>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
