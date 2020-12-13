@@ -39,7 +39,6 @@ const UlContainer = styled.ul`
   list-style:none;
   margin-right:20px;
   align-items:center;
-  justify-content:space-around;
   @media screen and (max-width: 600px){
     position:absolute;
     background:white;
@@ -47,7 +46,6 @@ const UlContainer = styled.ul`
     top:75px;
     flex-direction:column;
     left:${({state})=>state ? '-200px' : '0'};
-    justify-content:space-around;
     width:200px;
 
     transition: 300ms ease left;
@@ -67,6 +65,7 @@ const Li = styled.li`
   font-size:20px;
   color: :#444;
   cursor:pointer;
+  margin:30px 0;
 
   &:hover{
     color:#2997ff;
@@ -86,7 +85,7 @@ const Hamburger = styled.div`
 
 
 
-const Navigation =()=>{
+const Navigation =({peanut=navLinks})=>{
   const [state,setState] = useState(false)
   return(
     <Container>
@@ -94,7 +93,7 @@ const Navigation =()=>{
 
       <UlContainer state={state}>
       {
-        navLinks.map((link,index)=>{
+        peanut.map((link,index)=>{
           return(
             <Li key={index}>
                 {link.title}
@@ -103,7 +102,7 @@ const Navigation =()=>{
         })
       }
       </UlContainer>
-      <Hamburger onClick={()=>{setState(!state)}}>
+      <Hamburger onClick={()=>{setState(!state)}} data-testid="hamburger">
         <MenuIcon style={{width:'40px',height:'40px'}}/>
       </Hamburger>
     </Container>
