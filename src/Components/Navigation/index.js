@@ -1,15 +1,12 @@
 import React,{useState} from 'react';
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchInput from '../SearchInput'
 
 // text-link: #2997ff;
 // text-color:#444;
 
 const navLinks =[
-  {
-    title:"Search",
-    path:'/login'
-  },
   {
     title:'Home',
     path:'/'
@@ -92,6 +89,7 @@ const Navigation =({peanut=navLinks})=>{
       <Title>H-art collection</Title>
 
       <UlContainer state={state}>
+        <SearchInput/>
       {
         peanut.map((link,index)=>{
           return(
