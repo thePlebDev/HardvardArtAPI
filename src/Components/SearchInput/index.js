@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search';
 
+import Accordian from '../Accordian'
+
 import useInput from '../../Hooks/UseInput'
 
 const Container = styled.form`
@@ -24,7 +26,7 @@ const SearchInput =()=>{
       <SearchContainer onClick={(e)=>{handleSubmit(e)}}>
         <SearchIcon/>
       </SearchContainer>
-      <div>Advanced Search </div>
+      <Accordian />
     </Container>
   )
 }
