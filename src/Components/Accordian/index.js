@@ -1,8 +1,10 @@
-import React,{useState,useRef,useLayoutEffect} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import styled from 'styled-components'
 
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+
 import useMeasure from '../../Hooks/UseMeasure'
+import useClickDetection from '../../Hooks/UseClickDetection'
 
 const Container = styled.div`
   border:1px solid red;
@@ -30,7 +32,12 @@ const ArrowContainer = styled.div`
 const Accordian =()=>{
   const [state,setState] = useState(false)
   const ref = useRef(null)
+
   const {height} = useMeasure(ref)
+  useClickDetection(ref,setState)
+
+
+
 
 
   return(
