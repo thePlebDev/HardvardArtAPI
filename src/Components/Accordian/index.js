@@ -1,15 +1,16 @@
-import React,{useState} from 'react';
+import React,{useState,useRef,useLayoutEffect} from 'react';
 import styled from 'styled-components'
 
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import useMeasure from '../../Hooks/UseMeasure'
 
 const Container = styled.div`
   border:1px solid red;
   display:flex;
   flex-direction:column;
   align-items:center;
-  transition:all .25s;
-  height:${({state})=>state ? "100px" : '20px'};
+  transition:height .25s;
+  height:${({state,height})=>state ? `${height}px` : '20px'};
   overflow:hidden;
 
 
@@ -28,9 +29,13 @@ const ArrowContainer = styled.div`
 
 const Accordian =()=>{
   const [state,setState] = useState(false)
+  const ref = useRef(null)
+  const {height} = useMeasure(ref)
+
 
   return(
-    <Container state={state}>
+    <Container state={state} height={height}>
+    <div ref={ref}>
     <ArrowContainer onClick={()=>setState(!state)}>
       <span>Advanced Search</span>
       <Arrow state={state}>
@@ -38,9 +43,11 @@ const Accordian =()=>{
       </Arrow>
       </ArrowContainer>
 
-      <div>Period</div>
-      <div>Place</div>
-      <div>Century</div>
+
+        <div>Period</div>
+        <div>Place</div>
+        <div>Century</div>
+      </div>
     </Container>
   )
 }
