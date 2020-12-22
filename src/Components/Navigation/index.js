@@ -1,7 +1,10 @@
-import React,{useState} from 'react';
+import React,{useState,useRef} from 'react';
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchInput from '../SearchInput'
+
+
+import useClickDetection2 from '../../Hooks/UseClickDetection2'
 
 // text-link: #2997ff;
 // text-color:#444;
@@ -42,7 +45,7 @@ const UlContainer = styled.ul`
     height:calc(100% - 75px);
     top:75px;
     flex-direction:column;
-    left:${({state})=>state ? '-200px' : '0'};
+    left:${({state})=>state ? '0' : '-200px'};
     width:200px;
 
     transition: 300ms ease left;
@@ -83,12 +86,18 @@ const Hamburger = styled.div`
 
 
 const Navigation =({peanut=navLinks})=>{
+  let node = useRef(null)
+  let node2 = useRef(null)
+
   const [state,setState] = useState(false)
+
+  useClickDetection2(node,node2,setState)
+
   return(
     <Container>
       <Title>H-art collection</Title>
 
-      <UlContainer state={state}>
+      <UlContainer state={state} ref={node2}>
         <SearchInput/>
       {
         peanut.map((link,index)=>{
@@ -100,7 +109,7 @@ const Navigation =({peanut=navLinks})=>{
         })
       }
       </UlContainer>
-      <Hamburger onClick={()=>{setState(!state)}} data-testid="hamburger">
+      <Hamburger onClick={()=>{setState(!state)}} data-testid="hamburger" ref={node} >
         <MenuIcon style={{width:'40px',height:'40px'}}/>
       </Hamburger>
     </Container>
