@@ -15,6 +15,9 @@ const Container = styled.div`
   transition:height .25s;
   height:${({state,height})=>state ? `${height}` : '20px'};
   overflow:scroll;
+  @media screen and (min-width: 600px){
+    display:none;
+  }
 `
 
 const Arrow = styled.span`
