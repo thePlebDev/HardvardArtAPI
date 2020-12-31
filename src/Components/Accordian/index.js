@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react';
+import React,{useState,useRef} from 'react';
 import styled from 'styled-components'
 
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -44,15 +44,13 @@ const Accordian =()=>{
     <div ref={ref}>
     <ArrowContainer onClick={()=>setState(!state)}>
       <span>Advanced Search</span>
-      <Arrow state={state}>
+      <Arrow state={state} data-testid="arrow">
         <KeyboardArrowUpIcon/>
       </Arrow>
       </ArrowContainer>
-
-
-        <MiniAccordian title={'Person'}/>
-        <MiniAccordian title={'Places'}/>
-        <MiniAccordian title={'Period'}/>
+        <MiniAccordian data-testid="mini-accordian" title={'Person'}/>
+        <MiniAccordian data-testid="mini-accordian" title={'Places'}/>
+        <MiniAccordian data-testid="mini-accordian" title={'Period'}/>
       </div>
     </Container>
   )

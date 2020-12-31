@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the Accordian component should test the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dlfnbm iIfCDR"
+    height="0"
+  >
+    <div>
+      <div
+        class="sc-eCssSg gThwce"
+      >
+        <span>
+          Advanced Search
+        </span>
+        <span
+          class="sc-hKgILt cDnqYS"
+          data-testid="arrow"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ kDdlMT"
+      >
+        <div
+          style="display: flex; align-items: center; justify-content: center;"
+        >
+          Person
+          <span
+            class="sc-gsTCUz jGiHyD"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-bdfBwQ kDdlMT"
+      >
+        <div
+          style="display: flex; align-items: center; justify-content: center;"
+        >
+          Places
+          <span
+            class="sc-gsTCUz jGiHyD"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-bdfBwQ kDdlMT"
+      >
+        <div
+          style="display: flex; align-items: center; justify-content: center;"
+        >
+          Period
+          <span
+            class="sc-gsTCUz jGiHyD"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

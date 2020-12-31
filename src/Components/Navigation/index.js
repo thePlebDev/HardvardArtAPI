@@ -39,6 +39,7 @@ const UlContainer = styled.ul`
   list-style:none;
   margin-right:20px;
   align-items:center;
+  opacity:0.8;
   @media screen and (max-width: 600px){
     position:absolute;
     background:white;
