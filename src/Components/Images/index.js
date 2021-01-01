@@ -9,6 +9,7 @@ const Container = styled.div`
   grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
   align-items:center;
   justify-items:center;
+  margin-top:75px;
 `
 
 

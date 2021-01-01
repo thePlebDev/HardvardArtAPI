@@ -22,6 +22,8 @@ const navLinks =[
 ]
 
 const Container = styled.nav`
+  position:fixed;
+  top:0;
   height:75px;
   width:100%;
   background-color:white;
@@ -41,7 +43,7 @@ const UlContainer = styled.ul`
   align-items:center;
   opacity:0.8;
   @media screen and (max-width: 600px){
-    position:absolute;
+    position:fixed;
     background:white;
     height:calc(100% - 75px);
     top:75px;
