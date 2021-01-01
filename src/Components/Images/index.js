@@ -1,22 +1,29 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
+
+import useHomeImages from '../../Hooks/UseHomeImages'
+import ImageContainer from '../ImageContainer'
 
 
 const Images =()=>{
-  const [data,setData] = useState('')
-  console.log(data)
+  const {data} = useHomeImages()
 
-  useEffect(()=>{
-    axios.get('https://api.harvardartmuseums.org/image?apikey=f62650dc-ef26-4d8a-ace1-cf92860dcfb1')
-    .then(info=>setData(info.data.records))
-    .catch(error=>console.log('there was an error' + error))
-  },[])
+
+
 
 
 
   return(
     <div>
-
+      {
+        data
+          ?
+          data.map((item,index)=>{
+            console.log(item.baseimageurl)
+            return<ImageContainer src={item.baseimageurl} key={item.id}/>
+          })
+          :
+          <h1>There is no data here</h1>
+      }
     </div>
   )
 }
