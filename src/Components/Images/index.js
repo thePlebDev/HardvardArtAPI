@@ -10,11 +10,13 @@ const Container = styled.div`
   align-items:center;
   justify-items:center;
   margin-top:75px;
+  grid-gap:5px;
 `
 
 
 
 const Images =()=>{
+  console.log(process.env.REACT_APP_TITLE)
   const {data} = useHomeImages()
 
 
@@ -24,7 +26,6 @@ const Images =()=>{
         data
           ?
           data.map((item,index)=>{
-            console.log(item.baseimageurl)
             return<ImageContainer src={item.baseimageurl} key={item.id}/>
           })
           :

@@ -1,11 +1,17 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const Image = styled.img`
+  width:380px;
+`
+
 
 
 
 const ImageContainer =({src})=>{
 
   return(
-    <img src={src} alt="artistic expression" width="380px"/>
+    <Image src={src} alt="artistic expression"/>
   )
 }
 
