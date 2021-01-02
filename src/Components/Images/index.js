@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 
 import useHomeImages from '../../Hooks/UseHomeImages'
-import ImageContainer from '../ImageContainer'
-import TinyImages from '../TinyImages';
+
+import ImageLayout from '../ImageLayout'
+
 
 const Container = styled.div`
   display:grid;
@@ -60,15 +61,6 @@ const TitleInfo = styled.h3`
 
 `
 
-const TinyImageContainer = styled.div`
-  border:1px solid blue;
-  display:grid;
-  width:100%;
-  justify-content:center;
-  align-self:end;
-  grid-gap:5px;
-  grid-template-columns:repeat(auto-fit,150px);
-`
 
 
 const Images =()=>{
@@ -79,6 +71,7 @@ const Images =()=>{
 
   return(
     <Container>
+    
       <SubContainer>
         <ImageFrame/>
         <Info>
@@ -93,20 +86,7 @@ const Images =()=>{
         </Info>
       </SubContainer>
 
-      <TinyImageContainer>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-        <TinyImages/>
-      </TinyImageContainer>
-
-
+      <ImageLayout/>
     </Container>
   )
 }
