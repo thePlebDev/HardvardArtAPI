@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 import useHomeImages from '../../Hooks/UseHomeImages'
 import ImageContainer from '../ImageContainer'
+import TinyImages from '../TinyImages';
 
 const Container = styled.div`
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
   align-items:center;
-  justify-items:center;
+  justify-items:start;
   margin-top:75px;
   grid-gap:5px;
 `
@@ -26,6 +27,7 @@ const Container = styled.div`
 const SubContainer = styled.div`
   border:1px solid red;
   display:flex;
+  align-self:start;
   flex-direction:column;
   align-items:flex-start;
   justify-content:center;
@@ -58,21 +60,15 @@ const TitleInfo = styled.h3`
 
 `
 
-
-
-const TinyImages = styled.div`
+const TinyImageContainer = styled.div`
   border:1px solid blue;
+  display:grid;
+  width:100%;
+  justify-content:center;
+  align-self:end;
+  grid-gap:5px;
+  grid-template-columns:repeat(auto-fit,150px);
 `
-const LineBreak = styled.div`
-  margin-top:15px;
-  margin-bottom:15px;
-  width:98%;
-  border-bottom:1px solid #DFDFDF;
-
-`
-
-
-
 
 
 const Images =()=>{
@@ -97,9 +93,20 @@ const Images =()=>{
         </Info>
       </SubContainer>
 
-      <TinyImages>
-        tiny images will go here
-      </TinyImages>
+      <TinyImageContainer>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+        <TinyImages/>
+      </TinyImageContainer>
+
+
     </Container>
   )
 }
