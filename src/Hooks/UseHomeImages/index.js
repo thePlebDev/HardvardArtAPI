@@ -6,7 +6,7 @@ const useHomeImages =()=>{
 
 
   useEffect(()=>{
-    axios.get(`https://api.harvardartmuseums.org/image?apikey=${process.env.REACT_APP_APIKEY}`)
+    axios.get(`https://api.harvardartmuseums.org/object?apikey=${process.env.REACT_APP_APIKEY}`)
     .then(info=>setData(info.data.records))
     .catch(error=>console.log('there was an error' + error))
   },[])

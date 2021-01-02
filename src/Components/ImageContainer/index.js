@@ -1,17 +1,23 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+import {Link} from 'react-router-dom'
 
 const Image = styled.img`
   width:380px;
+  cursor:pointer;
 `
 
 
 
 
-const ImageContainer =({src})=>{
+const ImageContainer =({src,id})=>{
+  console.log(src)
 
   return(
-    <Image src={src} alt="artistic expression"/>
+    <Link to={`/image/${id}`}>
+      <Image src={src} alt="artistic expression"/>
+    </Link>
   )
 }
 
