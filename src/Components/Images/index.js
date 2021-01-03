@@ -15,38 +15,31 @@ const Container = styled.div`
   grid-gap:5px;
 `
 
-// {
-//   data
-//     ?
-//     data.map((item,index)=>{
-//       return<ImageContainer src={item.baseimageurl} key={item.id} id={item.id}/>
-//     })
-//     :
-//     <h1>There is no data here</h1>
-// }
-
 const SubContainer = styled.div`
-  border:1px solid red;
+  border-right:1px solid red;
   display:flex;
   align-self:start;
   flex-direction:column;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
   width:100%;
+  height:85vh;
 
 `
 const ImageFrame = styled.div`
   border:1px solid green;
   margin-left:10px;
-  width: 380px;
+  width: 500px;
   height:300px;
+  margin-bottom:20px;
 `
 const Info = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   align-self: flex-start;
-  padding-left:10px;
+  margin-left:20px;
+
 `
 const Title = styled.h5`
 margin-top:0px;

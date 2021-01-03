@@ -40,10 +40,9 @@ const H5 =styled.h5`
 const TinyImages = ({people,date,classification,title})=>{
 
 
+
   return(
     <Container>
-      <H5>Title:</H5>
-      <h5>{title}</h5>
 
     </Container>
   )
