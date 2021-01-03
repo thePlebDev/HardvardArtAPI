@@ -64,14 +64,13 @@ const TitleInfo = styled.h3`
 
 
 const Images =()=>{
-  console.log(process.env.REACT_APP_TITLE)
-//  const {data} = useHomeImages()
-  //console.log(data)
+  //console.log(process.env.REACT_APP_TITLE)
+  const {data} = useHomeImages()
 
 
   return(
     <Container>
-    
+
       <SubContainer>
         <ImageFrame/>
         <Info>
@@ -86,7 +85,7 @@ const Images =()=>{
         </Info>
       </SubContainer>
 
-      <ImageLayout/>
+      <ImageLayout info={data}/>
     </Container>
   )
 }
