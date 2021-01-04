@@ -26,7 +26,7 @@ const ImageLayout = ({info})=>{
          ?
          info.map((item,index)=>{
 
-           return <TinyImages key={item.id} name={item.name} image={item.images[1].url}/>
+           return <TinyImages key={item.id} name={item.name} date={item.dates.start.localDate} image={item.images[1].url}/>
          })
          :
          <div>Nothing yet</div>

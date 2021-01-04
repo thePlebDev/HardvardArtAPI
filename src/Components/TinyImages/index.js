@@ -30,39 +30,33 @@ const Image = styled.img`
 
 const Info = styled.div`
   position:absolute;
-  left:0;
-  top:0;
+  left:10px;
+  bottom:10px;
   background: rgba(0,0,0,0.9);
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  justify-content:center;
   color:white;
-  width:100%;
-  height:100%;
   transition:all .35s;
-  transform:scale(1);
+  padding:10px;
+  border-radius:5px;
+  text-align:start;
 
-  &:hover{
-    transform:scale(1.1);
-  }
 `
 const Title = styled.div`
-
-`
-const Date = styled.div`
-
+  font-size:14px;
 `
 
 
 
-const TinyImages = ({name,image})=>{
+
+const TinyImages = ({name,image,date})=>{
 //console.log(image)
 
   return(
     <Container>
       <Image src={image} alt={name}/>
-
+      <Info>
+        <Title>{name}</Title>
+        <Title>{date}</Title>
+      </Info>
     </Container>
   )
 }
