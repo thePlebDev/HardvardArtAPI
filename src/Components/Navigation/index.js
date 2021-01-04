@@ -23,6 +23,7 @@ const navLinks =[
 
 const Container = styled.nav`
   position:fixed;
+  z-index:99999999999999999999999;
   top:0;
   height:75px;
   width:100%;

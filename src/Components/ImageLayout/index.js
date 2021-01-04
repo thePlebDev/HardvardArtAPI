@@ -11,13 +11,13 @@ const TinyImageContainer = styled.div`
   width:100%;
   justify-content:center;
   align-items:center;
-  grid-gap:5px;
-  grid-template-columns:repeat(auto-fit,170px);
+  grid-gap:20px;
+  grid-template-columns:repeat(auto-fit,305px);
 `
 
 
 const ImageLayout = ({info})=>{
-  //console.log(info)
+  console.log(info)
 
   return(
     <TinyImageContainer>
@@ -26,7 +26,7 @@ const ImageLayout = ({info})=>{
          ?
          info.map((item,index)=>{
 
-           return <TinyImages key={item.id}/>
+           return <TinyImages key={item.id} name={item.name} image={item.images[1].url}/>
          })
          :
          <div>Nothing yet</div>
