@@ -17,7 +17,7 @@ const TinyImageContainer = styled.div`
 
 
 const ImageLayout = ({info})=>{
-  console.log(info)
+  //console.log(info)
 
   return(
     <TinyImageContainer>

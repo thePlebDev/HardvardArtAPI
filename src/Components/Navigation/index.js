@@ -27,10 +27,10 @@ const Container = styled.nav`
   top:0;
   height:75px;
   width:100%;
-  background-color:white;
+  background-color:rgb(2, 108, 223);
   display:flex;
   justify-content:space-between;
-  color:#444;
+  color:white;
 `
 const UlContainer = styled.ul`
 
