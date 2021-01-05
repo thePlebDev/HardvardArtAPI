@@ -52,31 +52,29 @@ const LargeImage = ()=>{
   const [info,setInfo] = useState()
 
   useEffect(()=>{
-    axios.get('https://app.ticketmaster.com/discovery/v2/events.json?keyword=adele&apikey=hEHtFckwoT5W31EWsnJlxipXXwoXGku2')
-      .then(data =>setState(data.data._embedded.events))
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events/1kFOv9QaGACehV_.json?apikey=${process.env.REACT_APP_APIKEY}`)
+      .then(data =>console.log(data.data._embedded))
       .catch(error=>console.log('Error -->' + error))
   },[])
 
-  useEffect(()=>{
-    if(state){
-      console.log('there is state to run')
-      setInfo(state[0])
-    }
-  },[state])
-  //console.log(info.images)
 
   return(
     <SubContainer>
       {
         info
          ?
+         <>
          <Image src={info.images[4].url} alt={info.name}/>
+         <Title>Title</Title>
+         <TitleInfo>Sweet home Alabama</TitleInfo>
+         <Title>Date</Title>
+         <TitleInfo>Sweet home Alabama</TitleInfo>
+         </>
          :
          <ImageFrame/>
       }
       <Info>
-        <Title>Title</Title>
-        <TitleInfo>Sweet home Alabama</TitleInfo>
+
         <Title>People</Title>
         <TitleInfo>George Lucas</TitleInfo>
         <Title>Date</Title>
