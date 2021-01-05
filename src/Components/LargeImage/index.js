@@ -32,7 +32,7 @@ const LargeImage = ()=>{
 
   useEffect(()=>{
     axios.get(`https://app.ticketmaster.com/discovery/v2/events/1kFOv9QaGACehV_.json?apikey=${process.env.REACT_APP_APIKEY}`)
-      .then(data =>console.log(data.data._embedded))
+      .then(data =>setState(data.data._embedded))
       .catch(error=>console.log('Error -->' + error))
   },[])
 
@@ -40,8 +40,20 @@ const LargeImage = ()=>{
   return(
     <SubContainer>
          <ImageFrame/>
-         <Performers/>
-         <Venue/>
+         {
+           state
+            ?
+            <>
+              <Performers data={state.attractions}/>
+              <Venue data={state.venues}/>
+            </>
+            :
+            <>
+              <Performers />
+              <Venue />
+            </>
+         }
+
 
     </SubContainer>
   )
