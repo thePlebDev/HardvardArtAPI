@@ -2,8 +2,11 @@ import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import axios from 'axios'
 
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+
 const ImageFrame = styled.div`
   border:1px solid green;
+  margin-top:20px;
   margin-left:10px;
   width: 500px;
   height:300px;
@@ -29,14 +32,12 @@ const TitleInfo = styled.h3`
   color:#2b2b2b;
 `
 const SubContainer = styled.div`
-  border-right:1px solid red;
   display:flex;
   align-self:start;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   width:100%;
-  height:85vh;
 
 `
 const Image = styled.img`
@@ -44,11 +45,38 @@ const Image = styled.img`
   border:1px solid red;
   width:500px;
 `
+const Performers = styled.div`
+  width:80%;
+  margin:15px auto;
+  transition:all 0.35s;
+  position:relative;
+  padding-left:30px;
+  height:${({state})=>state ? '100px':'20px'};
+  border-top:1px solid #353c42;
+  border-bottom:1px solid #353c42;
+  overflow:hidden;
+  padding-top:2px;
+  cursor:pointer;
+
+`
+const Arrow = styled.div`
+  position:absolute;
+  left:0;
+  top:0;
+  display:flex;
+  align-items:center;
+  transition:all 0.35s;
+  transform-origin:center center;
+  transform:${({state})=>state ? 'rotate(180deg)':'rotate(0deg)'};
+`
+
 
 
 
 const LargeImage = ()=>{
   const [state,setState] = useState()
+  const [arrow,setArrow] = useState(false);
+  const [arrow2,setArrow2] = useState(false)
   const [info,setInfo] = useState()
 
   useEffect(()=>{
@@ -60,28 +88,28 @@ const LargeImage = ()=>{
 
   return(
     <SubContainer>
-      {
-        info
-         ?
-         <>
-         <Image src={info.images[4].url} alt={info.name}/>
-         <Title>Title</Title>
-         <TitleInfo>Sweet home Alabama</TitleInfo>
-         <Title>Date</Title>
-         <TitleInfo>Sweet home Alabama</TitleInfo>
-         </>
-         :
          <ImageFrame/>
-      }
-      <Info>
 
-        <Title>People</Title>
-        <TitleInfo>George Lucas</TitleInfo>
-        <Title>Date</Title>
-        <TitleInfo>7th century</TitleInfo>
-        <Title>Classification</Title>
-        <TitleInfo>Drawing</TitleInfo>
-      </Info>
+        <Performers onClick={()=>setArrow(!arrow)} state={arrow}>
+          Performers
+          <Arrow state={arrow}>
+            <ExpandLessIcon/>
+          </Arrow>
+          <div>
+            adele
+          </div>
+          <div>
+            Mark antony
+          </div>
+        </Performers>
+
+        <Performers onClick={()=>setArrow2(!arrow2)} state={arrow2}>
+          Venue Details
+          <Arrow state={arrow2}>
+            <ExpandLessIcon/>
+          </Arrow>
+        </Performers>
+
     </SubContainer>
   )
 }
