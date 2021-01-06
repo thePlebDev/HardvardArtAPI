@@ -1,11 +1,12 @@
 import React from 'react';
-import Images from '../Images';
+import MainImage from '../MainImage';
+
 
 
 const Home =()=>{
   return(
     <div>
-      <Images/>
+      <MainImage />
     </div>
   )
 }
